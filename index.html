@@ -32,7 +32,7 @@
                                 <input class="showCreds" type="radio" name="optionsRadios" id="AAoptionsRadios2" value="option2" data-target="#allAccessCreds" aria-expanded="false" aria-controls="allAccessCreds"> 12 months - $100
                             </label>
                         </div>
-                        <div class="collapse" id="allAccessCreds">
+                        <div class="collapse allAccessCollapse" id="allAccessCreds">
                             <div class="well">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Email address</label>
@@ -46,21 +46,21 @@
                         </div>
                     </div>
                     <!-- end ALL ACCESS (STACKED) -->
-                    <!-- ALL ACCESS (STACKED) -->
+                    <!-- SELECT (STACKED) -->
                     <div class="panel panel-default panel-body">
                         <h2>Select</h2>
                         <p class="text-muted"><small>This has 2 price options. If either price is selected, it will display a box to select an add on. IF add on is selected, it will present a box to add credential</small>s.</p>
                         <div class="radio">
                             <label>
-                                <input class="showAddOn" type="radio" name="optionsRadios" id="seloptionsRadios3" value="option3" data-toggle="collapse" data-target="#selectAddOn" aria-expanded="false" aria-controls="selectAddOn"> 6 months - $20
+                                <input class="showAddOn" type="radio" name="optionsRadios" id="seloptionsRadios3" value="option3" data-target="#selectAddOn" aria-expanded="false" aria-controls="selectAddOn"> 6 months - $20
                             </label>
                         </div>
                         <div class="radio">
                             <label>
-                                <input class="showAddOn" type="radio" name="optionsRadios" id="seloptionsRadios4" value="option4" data-toggle="collapse" data-target="#selectAddOn" aria-expanded="false" aria-controls="selectAddOn"> 12 months - $60
+                                <input class="showAddOn" type="radio" name="optionsRadios" id="seloptionsRadios4" value="option4" data-target="#selectAddOn" aria-expanded="false" aria-controls="selectAddOn"> 12 months - $60
                             </label>
                         </div>
-                        <div class="collapse" id="selectAddOn">
+                        <div class="collapse selectAddOnCollapse" id="selectAddOn">
                             <div class="well well-sm">
                                 <div class="checkbox">
                                     <label>
@@ -82,14 +82,14 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end ALL ACCESS (STACKED) -->
+                    <!-- end SELECT (STACKED) -->
                     <!-- MOSTLY MUSIC -->
                     <div class="panel panel-default panel-body">
                         <h2>Mostly Music</h2>
                         <p class="text-muted"><small>This has 1 price option. If selected, it will display a box to select an add on. IF add on is selected, it will present a box to add credentials</small>.</p>
                         <div class="radio">
                             <label>
-                                <input class="showAddOn" type="radio" name="optionsRadios" id="seloptionsRadios6" value="option6" data-toggle="collapse" data-target="#mmAddon" aria-expanded="false" aria-controls="mmAddon"> $10 per month
+                                <input class="mmShowAddOn" type="radio" name="optionsRadios" id="seloptionsRadios6" value="option6" data-toggle="collapse" data-target="#mmAddon" aria-expanded="false" aria-controls="mmAddon"> $10 per month
                             </label>
                         </div>
                         <div class="collapse" id="mmAddon">
@@ -126,7 +126,11 @@
     $(document).ready(function() {
 
         $(".showCreds").click(function() {
-            $(".collapse").collapse('show');
+            $(".allAccessCollapse").collapse('show');
+        });
+
+        $(".showAddOn").click(function() {
+            $(".selectAddOnCollapse").collapse('show');
         });
 
     });
